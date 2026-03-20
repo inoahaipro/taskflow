@@ -1,0 +1,14 @@
+[
+  {
+    "step": "fetch",
+    "url": "https://api.coinbase.com/v2/prices/BTC-USD/spot"
+  },
+  {
+    "step": "extract_field",
+    "field": "data.amount"
+  },
+  {
+    "step": "write_file",
+    "filename": "btc_result.txt"
+  }
+]
