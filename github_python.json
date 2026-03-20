@@ -1,0 +1,21 @@
+[
+  {
+    "step": "fetch",
+    "url": "https://api.github.com/search/repositories?q=stars:%3E10000+language:python&sort=stars&order=desc&per_page=5"
+  },
+  {
+    "step": "extract_field",
+    "field": "items"
+  },
+  {
+    "step": "each",
+    "substep": {
+      "step": "ask",
+      "prompt": "Given this GitHub repo object, write one sentence describing what it does. Use the name and description fields."
+    }
+  },
+  {
+    "step": "write_file",
+    "filename": "top_python_repos.txt"
+  }
+]

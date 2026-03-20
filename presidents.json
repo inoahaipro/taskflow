@@ -1,0 +1,14 @@
+[
+  {
+    "step": "ask",
+    "prompt": "List the last 3 US presidents with their full names and birthdays. Return as plain text, one per line, formatted as: Name — Month Day, Year"
+  },
+  {
+    "step": "summarize",
+    "prompt": "Sort this list from youngest to oldest and reformat as a numbered list"
+  },
+  {
+    "step": "write_file",
+    "filename": "presidents.txt"
+  }
+]
