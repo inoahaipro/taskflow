@@ -65,13 +65,13 @@ Planner output and JSON workflows use a very small vocabulary:
 
 Supported `step` values:
 
-- `fetch`         -- HTTP GET
-- `filter`        -- filter JSON/lines by substring
-- `extract_field` -- dot-path lookup into nested JSON
-- `summarize`     -- LLM transform with an instruction
-- `ask`           -- freeform LLM question/transform
-- `webhook`       -- POST result to a URL
-- `write_file`    -- dump the result to a file
+- `fetch`: HTTP GET
+- `filter`: filter JSON/lines by substring
+- `extract_field`: dot-path lookup into nested JSON
+- `summarize`: LLM transform with an instruction
+- `ask`: freeform LLM question/transform
+- `webhook`: POST result to a URL
+- `write_file`: dump the result to a file
 
 ---
 
