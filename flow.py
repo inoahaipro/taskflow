@@ -1,5 +1,5 @@
 """
-taskflow v0.4.0 — local-first workflow engine
+taskflow v0.4.0 -- local-first workflow engine
 LLM for the new. Local logic for the known.
 Points at OpenClaw gateway for LLM steps.
 
@@ -21,11 +21,11 @@ TASKFLOW_URL   = os.environ.get("TASKFLOW_URL",   "http://localhost:18789/v1")
 TASKFLOW_KEY   = os.environ.get("TASKFLOW_KEY",   "b93525e070088a14ac01bc4d1ec3e16a7323961f23fc8ee5")
 TASKFLOW_MODEL = os.environ.get("TASKFLOW_MODEL", "default")
 
-# ── Telegram config (optional — for notify step) ──────────────────────────────
+# ── Telegram config (optional -- for notify step) ──────────────────────────────
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 TG_CHAT_ID   = os.environ.get("TG_CHAT_ID",   "")
 
-# ── Known fallback chains (optional hints — engine also asks LLM dynamically) ─
+# ── Known fallback chains (optional hints -- engine also asks LLM dynamically) ─
 FALLBACK_CHAINS = {
     "btc": [
         "https://api.coinbase.com/v2/prices/BTC-USD/spot",
@@ -69,7 +69,7 @@ SYSTEM_PLANNER = (
     '  write_file:    { "step": "write_file", "filename": "output.txt" }\n\n'
     "Rules:\n"
     "- For crypto prices use fetch with fallback_key 'btc' or 'eth'. Do NOT use coindesk URLs.\n"
-    "- For general knowledge (history, facts, lists) use a single 'ask' step — no fetch needed.\n"
+    "- For general knowledge (history, facts, lists) use a single 'ask' step -- no fetch needed.\n"
     "- For lists of items needing individual processing, use 'each'.\n"
     "- Always end with write_file, notify, or a summarize/ask that prints output.\n"
     "- Return only a valid JSON array. No explanation. No markdown. No code fences."
@@ -135,9 +135,9 @@ def fetch_url(url, fallback_key=None):
         except Exception as e:
             last_err = e
             if attempt == 0:
-                print(f"   ↩ fetch failed (attempt 1) — retrying...")
+                print(f"   ↩ fetch failed (attempt 1) -- retrying...")
             else:
-                print(f"   ↩ fetch failed (attempt 2) — trying fallbacks...")
+                print(f"   ↩ fetch failed (attempt 2) -- trying fallbacks...")
     urls_tried.append(url)
 
     # ── Stage 2: known fallback chain (if provided) ───────────────────────────

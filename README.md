@@ -1,6 +1,6 @@
 # taskflow
 
-Local‑first workflow engine.
+Local-first workflow engine.
 
 Describe a pipeline in plain English or JSON, execute it step by step, and
 only spend tokens where logic is actually needed.
@@ -9,16 +9,16 @@ only spend tokens where logic is actually needed.
 
 ## What it is
 
-`taskflow` is a tiny workflow runner that sits on top of an OpenAI‑compatible
+`taskflow` is a tiny workflow runner that sits on top of an OpenAI-compatible
 endpoint (like **Token Firewall**) and gives you two things:
 
-- **Mechanical, zero‑token steps** for the boring bits:
+- **Mechanical, zero-token steps** for the boring bits:
   - `fetch`          → GET a URL and parse JSON/text
   - `filter`         → filter lists/strings by substring
   - `extract_field`  → follow a `dot.separated.path` in JSON
   - `write_file`     → write the current result to disk
   - `webhook`        → POST the result to a URL
-- **LLM‑powered steps** only where needed:
+- **LLM-powered steps** only where needed:
   - `summarize`      → summarise / transform a payload
   - `ask`            → arbitrary question/transform with optional context
 
@@ -36,7 +36,7 @@ TASKFLOW_KEY   = os.environ.get("TASKFLOW_KEY",   "taskflow")
 TASKFLOW_MODEL = os.environ.get("TASKFLOW_MODEL", "default")
 ```
 
-You can override these env vars to point at any OpenAI‑compatible endpoint:
+You can override these env vars to point at any OpenAI-compatible endpoint:
 
 ```bash
 export TASKFLOW_URL="https://api.openai.com/v1"
@@ -65,13 +65,13 @@ Planner output and JSON workflows use a very small vocabulary:
 
 Supported `step` values:
 
-- `fetch`         — HTTP GET
-- `filter`        — filter JSON/lines by substring
-- `extract_field` — dot‑path lookup into nested JSON
-- `summarize`     — LLM transform with an instruction
-- `ask`           — freeform LLM question/transform
-- `webhook`       — POST result to a URL
-- `write_file`    — dump the result to a file
+- `fetch`         -- HTTP GET
+- `filter`        -- filter JSON/lines by substring
+- `extract_field` -- dot-path lookup into nested JSON
+- `summarize`     -- LLM transform with an instruction
+- `ask`           -- freeform LLM question/transform
+- `webhook`       -- POST result to a URL
+- `write_file`    -- dump the result to a file
 
 ---
 
@@ -132,11 +132,11 @@ raw model:
 
 Together they give you:
 
-- Local‑first workflows.
+- Local-first workflows.
 - 0 tokens on cache hits (thanks to Token Firewall).
 - Clear traces of where tokens were actually spent.
 
-You can also point taskflow at any other OpenAI‑compatible server if you just
+You can also point taskflow at any other OpenAI-compatible server if you just
 want a lightweight workflow runner.
 
 ---
