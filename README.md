@@ -125,16 +125,10 @@ spend tokens when you really need the model.
 ## Relationship to Token Firewall
 
 `taskflow` is happiest when you point it at **Token Firewall** instead of a
-raw model:
-
-- Firewall handles caching, safety, and device actions.
-- Taskflow handles coordination: fetch / filter / extract / summarize / send.
-
-Together they give you:
-
-- Local-first workflows.
-- 0 tokens on cache hits (thanks to Token Firewall).
-- Clear traces of where tokens were actually spent.
+raw model -- Firewall handles caching, safety, and device actions; taskflow
+handles coordination (fetch / filter / extract / summarize / send). Run them
+together and you get local-first workflows, 0 tokens on cache hits, and a
+clear trace of where every token actually went.
 
 You can also point taskflow at any other OpenAI-compatible server if you just
 want a lightweight workflow runner.
@@ -143,6 +137,6 @@ want a lightweight workflow runner.
 
 ## Status
 
-- Early prototype (`VERSION = "0.2.0"` in `flow.py`).
-- API and step vocabulary may grow, but the core idea is stable:
-  **LLM for the new, local logic for the known.**
+Early prototype (`VERSION = "0.2.0"` in `flow.py`). API and step vocabulary
+will probably grow, but the core idea won't change: LLM for the new stuff,
+local logic for the known stuff.
